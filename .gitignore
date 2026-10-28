@@ -1,0 +1,61 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE and Editor Files
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Large raw dataset, processed dataset, and archive files
+data/household_power_consumption.txt
+data/daily_power_consumption.csv
+data/household_power_consumption.zip
+*.zip
+
+# IDE specific internal metadata
+argv.json
+extensions/
+
+# Explicitly KEEP clean outputs
+!outputs/
+!outputs/*.png
+!outputs/*.txt
+!.vscode/launch.json

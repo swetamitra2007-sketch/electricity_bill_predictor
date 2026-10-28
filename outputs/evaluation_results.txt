@@ -1,0 +1,62 @@
+======================================================================
+ELECTRICITY BILL PREDICTOR: ACTUAL EVALUATION & MODEL METRICS REPORT
+Singularity Research Lab - AI Division Task
+======================================================================
+
+1. DATASET & CHRONOLOGICAL SPLIT
+----------------------------------------------------------------------
+- Dataset Name          : Individual Household Electric Power Consumption (UCI)
+- Total Clean Days      : 1433 days
+- Train Set Range       : 2006-12-24 to 2010-02-11 (1146 days, 80%)
+- Test Set Range        : 2010-02-12 to 2010-11-25 (287 days, 20%)
+- Splitting Strategy    : Chronological Split (Strictly preserves time order, prevents data leakage)
+
+2. MAIN MODEL: LINEAR REGRESSION EVALUATION
+----------------------------------------------------------------------
+- Test Mean Absolute Error (MAE) : 4.557 kWh/day
+- Test Root Mean Squared Error   : 6.214 kWh/day
+- Test R-squared (R2 Score)      : 0.328
+
+Feature Weights (Coefficients):
+  - lag_1          :   0.2693
+  - lag_2          :  -0.0437
+  - lag_3          :   0.1909
+  - lag_7          :   0.0680
+  - rolling_mean_7 :   0.3891
+  - day_of_week    :   0.2565
+  - is_weekend     :   3.4931
+  - month          :   0.0533
+  - day_of_month   :  -0.0285
+  - Intercept      :   1.6551
+
+3. COMPARISON MODEL: DECISION TREE REGRESSOR (max_depth=5)
+----------------------------------------------------------------------
+- Test Mean Absolute Error (MAE) : 4.795 kWh/day
+- Test Root Mean Squared Error   : 6.551 kWh/day
+- Test R-squared (R2 Score)      : 0.253
+
+Model Comparison:
+- Best Model on Test Set: Linear Regression (Lowest Test MAE: 4.557 kWh/day)
+
+4. NEXT-DAY CONSUMPTION FORECASTS & ILLUSTRATIVE BILL ESTIMATES
+----------------------------------------------------------------------
+- Forecast Target Date         : 2010-11-26 (Friday)
+- Assumed Electricity Tariff   : Rs. 7.50 per kWh (Illustrative flat rate)
+[NOTE: These are illustrative estimates for demonstration, not actual bills.]
+
+A. Main Model (Linear Regression):
+- Predicted Daily Consumption  : 25.11 kWh/day
+- Estimated Daily Bill         : Rs. 188.32
+- Projected 30-Day Consumption : 753.3 kWh/month
+- Projected 30-Day Bill        : Rs. 5649.67
+
+B. Comparison Model (Decision Tree Regressor):
+- Predicted Daily Consumption  : 25.32 kWh/day
+- Estimated Daily Bill         : Rs. 189.89
+- Projected 30-Day Consumption : 759.6 kWh/month
+- Projected 30-Day Bill        : Rs. 5696.65
+
+Formula:
+  Daily Bill Estimate = Predicted Daily kWh * Tariff Rate
+  30-Day Bill Estimate = (Predicted Daily kWh * 30 days) * Tariff Rate
+======================================================================
