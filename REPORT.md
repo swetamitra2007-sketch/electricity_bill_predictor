@@ -453,10 +453,9 @@ The raw dataset is large and should not be committed to GitHub. The `.gitignore`
 
 ### 11.2 Installation
 
-Install Python and the required libraries. Open a terminal in the project directory:
+Install Python and the required libraries. Open a terminal in the cloned electricity_bill_predictor project directory and run:
 
 ```cmd
-cd /d "C:\Users\SWETA MITRA\Downloads\electricity_bill_predictor"
 py -m pip install -r requirements.txt
 ```
 
@@ -503,4 +502,4 @@ The Electricity Bill Predictor demonstrates a complete introductory machine lear
 
 Among the two evaluated models, Linear Regression achieves better test-set performance than the Decision Tree Regression model. However, its predictive performance remains limited, and the estimated electricity bill is based on a simplified tariff assumption.
 
-The project provides a useful foundation for further work in time-series forecasting, energy analytics, and machine learning-based electricity consumption estimation.\n
+The project provides a useful foundation for further work in time-series forecasting, energy analytics, and machine learning-based electricity consumption estimation.
